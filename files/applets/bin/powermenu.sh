@@ -11,7 +11,7 @@ theme="$type/$style"
 
 # Theme Elements
 prompt="`hostname`"
-mesg="Uptime : `uptime -p | sed -e 's/up //g'`"
+mesg="Uptime : `/bin/uptime -p | sed -e 's/up //g'`"
 
 if [[ ( "$theme" == *'type-1'* ) || ( "$theme" == *'type-3'* ) || ( "$theme" == *'type-5'* ) ]]; then
 	list_col='1'
@@ -90,7 +90,8 @@ confirm_run () {
 # Execute Command
 run_cmd() {
 	if [[ "$1" == '--opt1' ]]; then
-		betterlockscreen -l
+		# betterlockscreen -l
+		blurlock
 	elif [[ "$1" == '--opt2' ]]; then
 		confirm_run 'kill -9 -1'
 	elif [[ "$1" == '--opt3' ]]; then
