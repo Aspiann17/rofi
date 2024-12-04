@@ -35,8 +35,8 @@ install_themes() {
 		mv "$ROFI_DIR" "${ROFI_DIR}.${USER}"
 	fi
 
-	echo -e ${BBlue}"[*] Installing rofi configs..." ${Color_Off}
-	{ mkdir -p "$ROFI_DIR"; ln -sf $DIR/files/ "$ROFI_DIR"; }
+	echo -e ${BBlue}"[*] Creating symbolic link for rofi config..." ${Color_Off}
+	ln -sf $DIR/files/ "$ROFI_DIR";
 
 	if [[ -f "$ROFI_DIR/config.rasi" ]]; then
 		echo -e ${BGreen}"[*] Successfully Installed.\n" ${Color_Off}
